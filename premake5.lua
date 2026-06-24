@@ -23,19 +23,21 @@ project "ImGui"
 		"imgui_tables.cpp"
 	}
 	
-	filter "system:windows"
-		systemversion "latest"
+	--filter "system:windows"
+		--systemversion "latest"
 
-	filter "configurations:Debug"
+	filter { "configurations:DebugEditor", "configurations:DebugRuntime" }
 		runtime "Debug"
 		symbols "on"
+    filter{}
 
-	filter "configurations:Release"
+	filter { "configurations:ReleaseEditor", "configurations:ReleaseRuntime" }
 		runtime "Release"
 		optimize "speed"
+    filter{}
 
     filter "configurations:Dist"
 		runtime "Release"
 		optimize "speed"
         symbols "off"
-
+    filter{}

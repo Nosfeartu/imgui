@@ -26,12 +26,12 @@ project "ImGui"
 	--filter "system:windows"
 		--systemversion "latest"
 
-	filter { "configurations:DebugEditor", "configurations:DebugRuntime" }
+	filter { "configurations:DebugEditor or configurations:DebugRuntime" }
 		runtime "Debug"
 		symbols "on"
     filter{}
 
-	filter { "configurations:ReleaseEditor", "configurations:ReleaseRuntime" }
+	filter { "configurations:ReleaseEditor or configurations:ReleaseRuntime" }
 		runtime "Release"
 		optimize "speed"
     filter{}
